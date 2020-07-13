@@ -1,0 +1,24 @@
+
+cmake_minimum_required (VERSION 3.12)
+project ("rayTracer")
+
+# set to cpp 17 standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Enable Optimizations
+# string(REPLACE "/O2" "/Od" CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+
+# Variables
+set(TEST_BIN_DIR "${CMAKE_BINARY_DIR}/tests")
+set(EXAMPLE_BIN_DIR "${CMAKE_BINARY_DIR}/examples")
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+# Put executables in the bin subdirectory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
+# Add include directories
+include_directories ("include")	# standard include directory
+
+# Add source to this project's executable.
+add_executable(main "src/app.cpp")
